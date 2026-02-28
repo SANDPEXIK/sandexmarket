@@ -1,0 +1,101 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f8f9fa;
+  color: #333;
+}
+
+header {
+  background: #000;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  margin: 0 1rem;
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.product-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+}
+
+.product-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #007bff;
+  margin: 0.5rem 0;
+}
+
+.btn {
+  display: block;
+  background: #007bff;
+  color: white;
+  text-align: center;
+  padding: 0.8rem;
+  border-radius: 8px;
+  margin: 1rem;
+  text-decoration: none;
+}
+
+.alert {
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 8px;
+  background: #d4edda;
+  color: #155724;
+}
+
+/* Header layout */
+.header-row{ display:flex; align-items:center; gap:1rem; }
+.brand{ flex:1; margin:0; }
+.brand a{ color:inherit; text-decoration:none; }
+.header-actions{ display:flex; align-items:center; gap:0.5rem; }
+#search[data-search]{ padding:0.4rem 0.6rem; border-radius:6px; border:1px solid rgba(0,0,0,0.1); }
+
+/* Burger */
+.burger{ background:transparent; border:0; color:white; font-size:1.4rem; cursor:pointer; display:none; }
+.nav{ display:flex; gap:1rem; align-items:center; }
+.nav.is-active{ display:block; }
+
+@media(max-width:800px){
+  .burger{ display:block; }
+  .nav{ display:none; position:absolute; top:64px; left:0; right:0; background:#111; padding:1rem; flex-direction:column; }
+}
+
+/* Prevent body scroll when menu open */
+.no-scroll{ overflow:hidden; }
+
+/* Cart badge */
+.cart-badge{ display:inline-block; min-width:20px; padding:0 6px; background:#ff3b30; color:white; border-radius:999px; font-size:0.85rem; margin-left:6px; }
+
+/* Add-to-cart animation */
+.added{ transform:scale(0.98); box-shadow:0 0 0 6px rgba(0,123,255,0.08); transition:transform .2s ease; }
